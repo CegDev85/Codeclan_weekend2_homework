@@ -11,6 +11,7 @@ class TestRoom(unittest.TestCase):
         ]
         customer_list = ["Mark","Katy","Jack"]
         self.room1 = Room("Car? eh ok!",customer_list,song_list,0)
+        
 
     def test_room1_has_name(self):
         self.assertEqual("Car? eh ok!", self.room1.name)
@@ -27,3 +28,8 @@ class TestRoom(unittest.TestCase):
 
     def test_room1_has_pot(self):
         self.assertEqual(0, self.room1.pot)
+
+    # def test_guest_can_check_in(self):
+        
+
+    #     self.assertEqual(["Mark","Katy","Jack","David"], self.room1.customer_list)

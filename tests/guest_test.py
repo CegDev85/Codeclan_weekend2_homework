@@ -5,6 +5,7 @@ class TestGuest(unittest.TestCase):
 
     def setUp(self):
         self.guest = Guest("Mark",20)
+       
 
     def test_guest_has_name(self):
         self.assertEqual("Mark", self.guest.name)
