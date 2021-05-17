@@ -1,5 +1,7 @@
 import unittest
 from src.room import Room
+from src.guest import Guest
+
 
 class TestRoom(unittest.TestCase):
 
@@ -10,26 +12,28 @@ class TestRoom(unittest.TestCase):
             "price":2}
         ]
         customer_list = ["Mark","Katy","Jack"]
-        self.room1 = Room("Car? eh ok!",customer_list,song_list,0)
+        self.room = Room("Car? eh ok!",customer_list,song_list,0)
         
 
-    def test_room1_has_name(self):
-        self.assertEqual("Car? eh ok!", self.room1.name)
+    def test_room_has_name(self):
+        self.assertEqual("Car? eh ok!", self.room.name)
 
-    def test_room1_has_customer_list(self):
-        self.assertEqual(["Mark","Katy","Jack"], self.room1.customer_list)
+    def test_room_has_customer_list(self):
+        self.assertEqual(["Mark","Katy","Jack"], self.room.customer_list)
 
-    def test_room1_has_song_list(self):
+    def test_room_has_song_list(self):
         self.assertEqual([
             {"name":"I will survive",
             "genre":"pop",
             "price":2}
-        ], self.room1.song_list)
+        ], self.room.song_list)
 
-    def test_room1_has_pot(self):
-        self.assertEqual(0, self.room1.pot)
+    def test_room_has_pot(self):
+        self.assertEqual(0, self.room.pot)
 
-    # def test_guest_can_check_in(self):
-        
-
-    #     self.assertEqual(["Mark","Katy","Jack","David"], self.room1.customer_list)
+    def test_guest_can_check_in(self):
+        self.guest = Guest("David",10)
+        self.room.check_in(self.guest)
+        self.assertEqual(4 ,len(self.room.customer_list))
+       
+    
