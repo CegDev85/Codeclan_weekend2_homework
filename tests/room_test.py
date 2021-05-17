@@ -36,4 +36,13 @@ class TestRoom(unittest.TestCase):
         self.room.check_in(self.guest)
         self.assertEqual(4 ,len(self.room.customer_list))
        
+    def test_guest_can_check_out(self):
+        self.guest = Guest("David",10) #here i have created a test guest
+        self.room.check_in(self.guest) #i have to add him to the list,then remove him
+        self.room.check_out(self.guest) #cant remove is he isnt on it
+        self.assertEqual(3,len(self.room.customer_list))
     
+    def test_guest_can_buy_a_song(self):
+        self.guest = Guest("David",10) 
+        self.assertEqual(8, self.guest.wallet)
+        self.assertEqual(2 ,self.room.pot)
