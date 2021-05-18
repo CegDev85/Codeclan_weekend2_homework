@@ -43,14 +43,14 @@ class TestRoom(unittest.TestCase):
         self.assertEqual(3,len(self.room.customer_list))
     
     
-    # def test_sell_a_song(self):
-    #     self.song = Song("Stayin Alive","POP",2)
-    #     self.guest = Guest("David",10)
-    #     self.room.sell_a_song(self.guest,self.song)
-    #     self.assertEqual(8,self.guest.wallet)
-    #     self.assertEqual(2,self.room.pot)
-
     def test_sell_a_song(self):
+        self.song = Song("Stayin Alive","POP",2)
+        self.guest = Guest("David",10)
+        self.room.sell_a_song(self.guest,self.song)
+        self.assertEqual(8,self.guest.wallet)
+        self.assertEqual(2,self.room.pot)
+
+    def test_guest_can_buy_a_song(self):
         self.song = Song("Stayin Alive","POP",2)
         self.guest = Guest("David",10)
         self.guest.buy_a_song(self.song,self.room)

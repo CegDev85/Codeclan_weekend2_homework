@@ -13,8 +13,8 @@ class Room:
         self.customer_list.remove(guest)
 
     
-    # def sell_a_song(self,guest,song):
-    #     guest.wallet -= song.price #these dont require self. because self. would imply they belong to the room, when they are external attributes
-    #     self.pot += song.price #this is self.pot and not self.room.pot because we are in the room class i think,so we just need to acces the pot not the room.
+    def sell_a_song(self,guest,song):
+        guest.wallet -= song.price #these dont require self. because self. would imply they belong to the room, when they are external attributes
+        self.pot += song.price #this is self.pot and not self.room.pot because we are in the room class i think,so we just need to acces the pot not the room.
 
 #it takes me longer to understand but i get there in the end
